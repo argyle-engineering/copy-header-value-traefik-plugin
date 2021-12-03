@@ -1,4 +1,4 @@
-package header
+package copy_header_value_traefik_plugin
 
 import (
 	"context"

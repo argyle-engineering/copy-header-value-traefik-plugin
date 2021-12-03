@@ -7,7 +7,7 @@ limitations, e.g. only a single key's value can be copied.
 
 ### Configuration
 
-Traefik static configuration for local plugin:
+Traefik static configuration for plugin:
 
 ```.yaml
 ...
