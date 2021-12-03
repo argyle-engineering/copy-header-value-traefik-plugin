@@ -1,0 +1,12 @@
+displayName: Copy header value
+summary: Plugin that copies header value into a new header.
+type: middleware
+import: github.com/argyle-engineering/copy-header-value-traefik-plugin
+testData:
+  from: 'Cookie'
+  pairSeparator: ';'
+  keyValueSeparator: '='
+  key: 'id'
+  to: 'Authorization'
+  prefix: 'Bearer '
+  overwrite: false
