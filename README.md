@@ -15,26 +15,26 @@ experimental:
   plugins:
     copy-header-value:
       moduleName: github.com/argyle-engineering/copy-header-value-traefik-plugin
+      version: v1.0.0
 ```
 
 Plugin is then configured as a route middleware
 
 ```.yaml
-http:
-  routers:
-    route1:
-      middlewares: ["copyHeaderValue"]
-  middlewares:
-    copyHeaderValue:
-      plugin:
-        copy-header-value:
-          from: 'Cookie'
-          pairSeparator: ';'            
-          keyValueSeparator: '='
-          key: 'id'
-          to: 'Authorization'
-          prefix: 'Bearer '
-          overwrite: false
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: copy-header-value
+spec:
+  plugin:
+    copy-header-value:
+      from: "Cookie"
+      pairSeparator: ";"
+      keyValueSeparator: "="
+      key: "id"
+      to: "Authorization"
+      prefix: "Bearer "
+      overwrite: false
 ```
 
 In this example, when there is `Cookie` header, value identified by the `id` key will be moved
